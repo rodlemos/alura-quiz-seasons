@@ -1,26 +1,8 @@
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useState } from 'react'
-
-const ImputBox = styled.input`
-    width: 100%;
-    height: 40px;
-    border-radius: 4px;
-    color: ${({ theme }) => theme.colors.contrastText};
-    border: 1px solid ${({ theme }) => theme.colors.primary};
-    background-color: ${({ theme }) => theme.colors.mainBg};
-`;
-
-const SubmitForm = styled.button`
-    width: 100%;
-    height: 40px;
-    margin-top: 25px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    color: ${({ theme }) => theme.colors.contrastText};
-    border: transparent;
-    background-color: ${({ theme }) => theme.colors.secondary};
-`;
+import InputBox from '../Input'
+import Button from '../Button'
 
 export default function Form() {
     const router = useRouter();
@@ -31,14 +13,15 @@ export default function Form() {
             e.preventDefault();
             router.push(`/quiz?name=${name}`);
         }}>
-            <ImputBox 
-                onChange={(e)=>{
-                    setName(e.target.value);
-                }}
+            <InputBox
+                name="nomeDoUsuario"
+                onChange={(e)=> setName(e.target.value)}
                 type="text" 
                 placeholder="Digite um nome para começar a jogar"
+                value={name}
             />
-            <SubmitForm type="submit" disabled={name.length === 0}>Jogar {name}</SubmitForm>
+            <Button type="submit" disabled={name.length === 0}>Jogar {name}</Button>
         </form>
     )
 }
+

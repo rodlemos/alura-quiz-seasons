@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
-  background-color: #00000070;
-  padding: 20px;
+  background-color: rgba(0,0,0,.3);
+  padding: 0 20px;
   display: flex;
   align-items: center;
   border-radius: 4px; 
@@ -16,7 +16,7 @@ const FooterWrapper = styled.footer`
     transition: .3s;
     &:hover,
     &:focus {
-      opacity: .5;
+    opacity: .5;
     }
     span {
       text-decoration: underline;
@@ -24,9 +24,9 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-export default function Footer(props) {
+export default function Footer() {
   return (
-    <FooterWrapper {...props}>
+    <FooterWrapper>
       <a href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>

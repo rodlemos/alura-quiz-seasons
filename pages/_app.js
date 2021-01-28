@@ -1,3 +1,4 @@
+import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import HeadPage from '../src/components/Head';
 import db from '../db.json';
