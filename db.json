@@ -4,25 +4,63 @@
     "description": "Teste os seus conhecimentos sobre as quatro estações e mostre que está por dentro do que rola nas diferentes épocas do ano!",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
+        "image": "https://s.calendarr.com/upload/datas/ve/ra/verao_c.jpg",
+        "title": "O horário de verão, no Brasil, foi criado em?",
+        "description": "saudades dele ou não?",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "1980",
+          "1982",
+          "1985",
+          "1987"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
-        "description": "Faz tempo em haha",
+        "image": "https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2019/03/Primavera-na-espanha-europa_476644078.jpg",
+        "title": "Qual dessas flores NÃO é típica dessa estação?",
+        "description": "Primavera é considerada a estação das flores",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "Dália",
+           "Jasmim",
+           "Rosa",
+           "Violeta"
+        ]
+      },
+      {
+        "image": "https://www.colegioweb.com.br/wp-content/uploads/2013/03/1319123_41078066-1024x682.jpg",
+        "title": "Qual destes festivais NÃO acontece durante o outono?",
+        "description": "Existem festividades típicas em cada estação",
+        "answer": 3,
+        "alternatives": [
+           "Halloween",
+           "Festival da Lua",
+           "Festes de la Mercé",
+           "Festival Holi"
+        ]
+      },
+      {
+        "image": "https://cdn.vox-cdn.com/thumbor/i_DRXWOQKjX0dXrPMI6uPjtwqwo=/0x743:5111x3299/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/19534013/583747376.jpg.jpg",
+        "title": "Oymyakon - Russia, resgistrou seu recorde de frio que foi de?",
+        "description": "considerado uma dos lugares mais frio fora da Antártida",
+        "answer": 3,
+        "alternatives": [
+           "-38°C",
+           "-47°C",
+           "-56°C",
+           "-68°C"
+        ]
+      },
+      {
+        "image": "https://www.cbronline.com/wp-content/uploads/2016/06/database-770x481.jpeg",
+        "title": "Qual dos bancos de dados abaixo é do tipo não relacional?",
+        "description": "Questão bonus :)",
+        "answer": 1,
+        "alternatives": [
+           "MySql",
+           "MongoDB",
+           "MariaDB",
+           "PostgreSQL"
         ]
       }
     ],

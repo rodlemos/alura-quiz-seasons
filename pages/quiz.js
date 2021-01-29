@@ -5,6 +5,8 @@ import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import QuestionWidget from '../src/components/QuestionWidget'
+import ResultWidget from '../src/components/ResultWidget';
+
 
 const screenStates = {
     QUIZ: 'QUIZ',
@@ -15,12 +17,17 @@ const screenStates = {
 export default function QuizPage() {
     const [screenState,setScreenState] = React.useState(screenStates.LOADING);
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
+    const [results, setResults] = React.useState([]);
     const totalQuestions = db.questions.length;
     const questionIndex = currentQuestion;
     const question = db.questions[questionIndex];
+
+    function addResults(result) {
+        setResults([...results, result])
+    }
     
     React.useEffect(()=> {
-        setTimeout(()=>{
+        setTimeout(()=> {
             setScreenState(screenStates.QUIZ);
         }, 1 * 1000);
     },[]);
@@ -43,12 +50,14 @@ export default function QuizPage() {
                     question={question} 
                     questionIndex={questionIndex}
                     totalQuestions={totalQuestions}
+                    onSubmit={handleSubmitQuiz}
+                    addResults ={addResults}
                 />
                 )}
 
-                {screenState === screenStates.LOADING && <LoadingWidget />}
+                {screenState === screenStates.LOADING && <LoadingWidget/>}
 
-                {screenState === screenStates.RESULT && <div>Você acertou X questões, parabéns!</div>}
+                {screenState === screenStates.RESULT && <ResultWidget results={results} totalQuestions={totalQuestions}/>}
             </QuizContainer>
         </QuizBackground>
     );
