@@ -33,7 +33,7 @@ function ResultWidget({results, totalQuestions}) {
             <QuestionList>
             {results.map((result, resultIndex)=>{
               return (
-                <Widget.Topic key={`result__${resultIndex}`} style={{textAlign: 'center'}}>
+                <Widget.Topic as="li" key={`result__${resultIndex}`} style={{textAlign: 'center', cursor: 'default'}}>
                   Questão {resultIndex + 1}: {result === true ? <Button.V><AiOutlineCheckCircle/></Button.V> : <Button.X><VscError/></Button.X>}
                 </Widget.Topic>
                 )
