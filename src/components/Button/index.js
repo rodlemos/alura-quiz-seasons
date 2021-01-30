@@ -23,4 +23,12 @@ const Button = styled.button`
     }
 `;
 
+Button.V = styled.span`
+    color: ${({theme}) => theme.colors.success}
+`;
+
+Button.X = styled.span`
+    color: ${({theme}) => theme.colors.wrong}
+`;
+
 export default Button;

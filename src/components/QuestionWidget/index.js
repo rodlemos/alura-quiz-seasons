@@ -44,7 +44,7 @@ function QuestionWidget({question,questionIndex,totalQuestions,onSubmit,addResul
                             <Widget.Topic 
                                 as="label" 
                                 htmlFor={alternativeId}
-                                key={alternativeId}
+                                // key={alternativeId}
                                 data-selected={isSelected}
                                 data-status={isQuestionSubmited && alternativeStatus}
                             >
@@ -53,7 +53,7 @@ function QuestionWidget({question,questionIndex,totalQuestions,onSubmit,addResul
                                     id={alternativeId} 
                                     name={questionId}
                                     style={{visibility: 'hidden'}}
-                                    onChange={()=> setSelectedAlternative(alternativeIndex)}            
+                                    onClick={()=> setSelectedAlternative(alternativeIndex)}            
                                 />
                                 {alternative}
                             </Widget.Topic>
@@ -62,8 +62,8 @@ function QuestionWidget({question,questionIndex,totalQuestions,onSubmit,addResul
                     <Button type="submit" disabled={!hasAlternativeSelected}>
                         Confirmar
                     </Button>
-                    {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
-                    {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
+                    {isQuestionSubmited && isCorrect && <p style={{textAlign: 'center'}}>Você acertou!</p>}
+                    {isQuestionSubmited && !isCorrect && <p style={{textAlign: 'center'}}>Você errou!</p>}
                 </AlternativesForm>
             </Widget.Content>
         </Widget>

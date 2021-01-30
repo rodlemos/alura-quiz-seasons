@@ -6,6 +6,7 @@ import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import QuestionWidget from '../src/components/QuestionWidget'
 import ResultWidget from '../src/components/ResultWidget';
+import { array } from 'prop-types';
 
 
 const screenStates = {

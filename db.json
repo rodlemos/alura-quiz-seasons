@@ -65,8 +65,9 @@
       }
     ],
     "external": [
-      "https://aluraquiz-base.alura-challenges.vercel.app/",
-      "https://aluraquiz.edlanioj.vercel.app/"
+      "https://crashquiz.wellingtonfreitas.vercel.app/",
+      "https://supernatural-quiz.pedro-murilo.vercel.app/",
+      "https://aluraquiz-coffee.leonardot07.vercel.app/"
     ],
     "theme": {
       "colors": {

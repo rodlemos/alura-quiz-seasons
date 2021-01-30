@@ -1,11 +1,18 @@
 import Widget from '../Widget'
 import styled from 'styled-components';
+import Router from 'next/router';
+import Button from '../Button';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { VscError } from 'react-icons/vsc';
+import db from '../../../db.json';
 
 const QuestionList = styled.ul`
   list-style-type: none;
 `
 
 function ResultWidget({results, totalQuestions}) {
+  const { name } = Router.query;
+
     return (
       <Widget>
         <Widget.Header>
@@ -21,14 +28,14 @@ function ResultWidget({results, totalQuestions}) {
               return currentCount;
             }, 0)} questões de {results.length} */}
 
-            <div>Você acertou {results.filter((x)=> x).length} questões de {totalQuestions}</div>
+            <div> {name}, você acertou {results.filter((x)=> x).length} questões de {totalQuestions}</div>
 
             <QuestionList>
             {results.map((result, resultIndex)=>{
               return (
-                <li key={`result__${result}`}>
-                  Questão {resultIndex + 1}: {result === true ? 'V' : 'X'}
-                </li>
+                <Widget.Topic key={`result__${resultIndex}`} style={{textAlign: 'center'}}>
+                  Questão {resultIndex + 1}: {result === true ? <Button.V><AiOutlineCheckCircle/></Button.V> : <Button.X><VscError/></Button.X>}
+                </Widget.Topic>
                 )
               })}
             </QuestionList>
