@@ -2,6 +2,7 @@ import React from 'react';
 import Widget from '../Widget';
 import Button from '../Button';
 import AlternativesForm from '../AlternativesForm';
+import BackLinkArrow from '../BackLinkArrow';
 
 function QuestionWidget({question,questionIndex,totalQuestions,onSubmit,addResults}) {
     const [selectedAlternative,setSelectedAlternative] = React.useState(undefined);
@@ -13,6 +14,7 @@ function QuestionWidget({question,questionIndex,totalQuestions,onSubmit,addResul
     return (
         <Widget>
             <Widget.Header>
+                <BackLinkArrow href="/"/>
                 <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
             </Widget.Header>
 

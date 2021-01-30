@@ -17,7 +17,7 @@
       },
       {
         "image": "https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2019/03/Primavera-na-espanha-europa_476644078.jpg",
-        "title": "Qual dessas flores NÃO é típica dessa estação?",
+        "title": "Qual dessas flores NÃO é típica da primavera?",
         "description": "Primavera é considerada a estação das flores",
         "answer": 0,
         "alternatives": [
@@ -33,10 +33,10 @@
         "description": "Existem festividades típicas em cada estação",
         "answer": 3,
         "alternatives": [
-           "Halloween",
-           "Festival da Lua",
-           "Festes de la Mercé",
-           "Festival Holi"
+           "Halloween - EUA",
+           "Festival da Lua Cheia - Tailândia",
+           "Festes de la Mercé - Espanha",
+           "Festival Holi - Índia"
         ]
       },
       {
@@ -65,7 +65,8 @@
       }
     ],
     "external": [
-      ""
+      "https://aluraquiz-base.alura-challenges.vercel.app/",
+      "https://aluraquiz.edlanioj.vercel.app/"
     ],
     "theme": {
       "colors": {

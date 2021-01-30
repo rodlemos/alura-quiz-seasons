@@ -1,11 +1,11 @@
 import React from 'react';
-import db from '../db.json';
-import LoadingWidget from '../src/components/LoadingWidget'
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizLogo from '../src/components/QuizLogo';
-import QuestionWidget from '../src/components/QuestionWidget'
-import ResultWidget from '../src/components/ResultWidget';
+// import db from '../../db.json';
+import LoadingWidget from '../../components/LoadingWidget'
+import QuizBackground from '../../components/QuizBackground';
+import QuizContainer from '../../components/QuizContainer';
+import QuizLogo from '../../components/QuizLogo';
+import QuestionWidget from '../../components/QuestionWidget'
+import ResultWidget from '../../components/ResultWidget';
 
 
 const screenStates = {
@@ -14,13 +14,14 @@ const screenStates = {
     RESULT: 'RESULT'
 };
 
-export default function QuizPage() {
+export default function QuizPage({externalQuestions, externalBg}) {
     const [screenState,setScreenState] = React.useState(screenStates.LOADING);
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
     const [results, setResults] = React.useState([]);
-    const totalQuestions = db.questions.length;
+    const totalQuestions = externalQuestions.length;
     const questionIndex = currentQuestion;
-    const question = db.questions[questionIndex];
+    const question = externalQuestions[questionIndex];
+    const bg = externalBg;
 
     function addResults(result) {
         setResults([...results, result])
@@ -29,7 +30,7 @@ export default function QuizPage() {
     React.useEffect(()=> {
         setTimeout(()=> {
             setScreenState(screenStates.QUIZ);
-        }, 1000);
+        }, 1 * 1000);
     },[]);
 
     function handleSubmitQuiz() {
@@ -42,7 +43,7 @@ export default function QuizPage() {
       }
     
     return (
-        <QuizBackground backgroundImage={db.bg}>
+        <QuizBackground backgroundImage={bg}>
             <QuizContainer>
                 <QuizLogo/>
                 {screenState === screenStates.QUIZ && (
