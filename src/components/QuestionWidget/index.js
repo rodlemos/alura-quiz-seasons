@@ -44,7 +44,7 @@ function QuestionWidget({question,questionIndex,totalQuestions,onSubmit,addResul
                             <Widget.Topic 
                                 as="label" 
                                 htmlFor={alternativeId}
-                                // key={alternativeId}
+                                key={alternativeId}
                                 data-selected={isSelected}
                                 data-status={isQuestionSubmited && alternativeStatus}
                             >

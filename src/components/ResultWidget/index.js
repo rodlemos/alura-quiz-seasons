@@ -5,6 +5,9 @@ import Button from '../Button';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { VscError } from 'react-icons/vsc';
 import db from '../../../db.json';
+import ShowAnswer from '../ShowAnswer'
+import Link from '../Link';
+import { motion } from 'framer-motion';
 
 const QuestionList = styled.ul`
   list-style-type: none;
@@ -12,9 +15,23 @@ const QuestionList = styled.ul`
 
 function ResultWidget({results, totalQuestions}) {
   const { name } = Router.query;
+  const questions = db.questions;
+    const rightAnswer = questions.map((question) =>{
+        const {answer,alternatives} = question;
+        return (alternatives[answer]);
+    })
 
     return (
-      <Widget>
+      <Widget
+        as={motion.section}
+        transition={{delay: 0, duration: 0.7}}
+        variants={{
+          closed: {height: 0},
+          open: {height: 'auto'}
+        }}
+        initial="closed"
+        animate="open"
+      >
         <Widget.Header>
           Fim de jogo!
         </Widget.Header>
@@ -33,12 +50,13 @@ function ResultWidget({results, totalQuestions}) {
             <QuestionList>
             {results.map((result, resultIndex)=>{
               return (
-                <Widget.Topic as="li" key={`result__${resultIndex}`} style={{textAlign: 'center', cursor: 'default'}}>
-                  Questão {resultIndex + 1}: {result === true ? <Button.V><AiOutlineCheckCircle/></Button.V> : <Button.X><VscError/></Button.X>}
+                <Widget.Topic as="li" key={`result__${resultIndex}`} style={{cursor: 'default'}}>
+                  Questão {resultIndex + 1}: {result === true ? <Button.V><AiOutlineCheckCircle/></Button.V> : <Button.X><VscError/><ShowAnswer> {`(${rightAnswer[resultIndex]})`}</ShowAnswer></Button.X>}
                 </Widget.Topic>
                 )
               })}
             </QuestionList>
+            <Link href="/"><Button style={{fontWeight: '700'}}>Home</Button></Link>
         </Widget.Content>
       </Widget>
     );

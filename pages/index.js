@@ -8,6 +8,7 @@ import Widget from '../src/components/Widget';
 import Form from '../src/components/Form';
 import Link from '../src/components/Link';
 import { motion } from 'framer-motion';
+import ShowAnswer from '../src/components/ShowAnswer'
 
 export default function Home() {
 
@@ -30,6 +31,7 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
+            <ShowAnswer/>
             <Form/>
           </Widget.Content>
         </Widget>
