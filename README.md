@@ -1,4 +1,4 @@
-# Alura Quiz Projetc 
+# Alura Quiz Project
 
 Quiz project made with Next.js and Styled Components in the second edtion of React Immersion Course from Alura.
 
